@@ -10391,6 +10391,7 @@ nav#desktop-nav ul li .mega-menu-area {
       display: flex;
   }
   .school-info .read-more a:first-child{
+
       margin-right: 14px;
   }
 
@@ -10401,4 +10402,5 @@ nav#desktop-nav ul li .mega-menu-area {
         color: #fdc800;
         margin-right: 10px;
         font-size: 16px;
+        left: 0;
   }
