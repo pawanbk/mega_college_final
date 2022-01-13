@@ -95,13 +95,15 @@
                                 </ul>
                             </div>
 
-                            <div class="news-btn-holder">
-                            <a href="#" class="view-all-accent-btn">View All</a>
-                        </div>
+                            <div class="read-more">
+                                <a href="#" class="view-all-primary-btn">Read More</a>
+                                <a href="#" class="view-all-primary-btn">Inquery</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="single-item">
                 <div class="single-item-wrapper row">
                     <div class="courses-img-wrapper hvr-bounce-to-bottom col-md-6" style="background-image: url('img/course/2.jpg')"> </div>
@@ -120,13 +122,15 @@
                                 </ul>
                             </div>
 
-                            <div class="news-btn-holder">
-                            <a href="#" class="view-all-accent-btn">View All</a>
-                        </div>
+                            <div class="read-more">
+                                <a href="#" class="view-all-primary-btn">Read More</a>
+                                <a href="#" class="view-all-primary-btn">Inquery</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="single-item">
                 <div class="single-item-wrapper row">
                     <div class="courses-img-wrapper hvr-bounce-to-bottom col-md-6" style="background-image: url('img/course/2.jpg')"> </div>
@@ -145,13 +149,15 @@
                                 </ul>
                             </div>
 
-                            <div class="news-btn-holder">
-                            <a href="#" class="view-all-accent-btn">View All</a>
-                        </div>
+                            <div class="read-more">
+                                <a href="#" class="view-all-primary-btn">Read More</a>
+                                <a href="#" class="view-all-primary-btn">Inquery</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
 
         </div>
     </div>

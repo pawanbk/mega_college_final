@@ -10386,3 +10386,19 @@ nav#desktop-nav ul li .mega-menu-area {
   .school-info .single-item-wrapper{
     box-shadow: 0 5px 19px 0 rgb(17 12 30 / 25%);
   }
+
+  .school-info .read-more {
+      display: flex;
+  }
+  .school-info .read-more a:first-child{
+      margin-right: 14px;
+  }
+
+
+  .school-info .entry-content ul li::before{
+        content: "\f105";
+        font-family: FontAwesome;
+        color: #fdc800;
+        margin-right: 10px;
+        font-size: 16px;
+  }
