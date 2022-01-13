@@ -3,46 +3,23 @@
 <div class="slider1-area overlay-default">
     <div class="bend niceties preview-1">
         <div id="ensign-nivoslider-3" class="slides">
-            <img src="img/slider/2-1.jpg" alt="slider" title="#slider-direction-1" />
-            <img src="img/slider/2-2.jpg" alt="slider" title="#slider-direction-2" />
-            <img src="img/slider/1-2.jpg" alt="slider" title="#slider-direction-3" />
+            @foreach($data['banner'] as $key=>$banner)
+            <img src="http://localhost/school_college_admin/uploads/banner/{{$banner->featured_image}}" alt="slider" title="#slider-direction-{{++$key}}" />
+            @endforeach
         </div>
-        <div id="slider-direction-1" class="t-cn slider-direction">
-            <div class="slider-content s-tb slide-1">
+        @foreach($data['banner'] as $key=>$banner)
+        <div id="slider-direction-{{++$key}}" class="t-cn slider-direction">
+            <div class="slider-content s-tb slide-{{++$key}}">
                 <div class="title-container s-tb-c">
-                    <div class="title1">Best Education For UI Design</div>
-                    <p>Emply dummy text of the printing and typesetting industry orem Ipsum has been the industry's standard
-                        <br>dummy text ever sinceprinting and typesetting industry. </p>
+                    <div class="title1">{{$banner->banner_title}}</div>
+                    <p> {{$banner->banner_description}} </p>
                     <div class="slider-btn-area">
                         <a href="#" class="default-big-btn">Start a Course</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="slider-direction-2" class="t-cn slider-direction">
-            <div class="slider-content s-tb slide-2">
-                <div class="title-container s-tb-c">
-                    <div class="title1">Best Education For HTML Template</div>
-                    <p>Emply dummy text of the printing and typesetting industry orem Ipsum has been the industry's standard
-                        <br>dummy text ever sinceprinting and typesetting industry. </p>
-                    <div class="slider-btn-area">
-                        <a href="#" class="default-big-btn">Start a Course</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="slider-direction-3" class="t-cn slider-direction">
-            <div class="slider-content s-tb slide-3">
-                <div class="title-container s-tb-c">
-                    <div class="title1">Best Education Into PHP</div>
-                    <p>Emply dummy text of the printing and typesetting industry orem Ipsum has been the industry's standard
-                        <br>dummy text ever sinceprinting and typesetting industry. </p>
-                    <div class="slider-btn-area">
-                        <a href="#" class="default-big-btn">Start a Course</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 
@@ -51,15 +28,15 @@
         <div class="row about-page1-inner align-items-center">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="about-page-img-holder">
-                    <img src="img/about/2.jpg" class="img-responsive" alt="about">
+                    <img src="http://localhost/school_college_admin/uploads/about/{{$data['about']->featured_image}}" class="img-responsive" alt="about">
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ps-md-4">
                 <div class="about-page-content-holder">
                     <div class="content-box">
-                        <h2>Xavier International College</h2>
+                        <h2>{{$data['about']->title}}</h2>
                         <p>
-                            Xavier is more than just a place where you come to study for your degree. It is a community of students and faculty from diverse background coming together with a common belief that learning is a lifelong process. On one hand, you will always find being pushed to take responsibility of your own learning while on the other hand you will be encouraged to question, challenge and critically reflect both in and outside the classroom.
+                            {{$data['about']->description}}
                         </p>
 
                         <div class="news-btn-holder">
@@ -174,13 +151,15 @@
         <div class="rc-carousel" data-loop="true" data-items="2" data-margin="30" data-autoplay="false" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="true" data-nav="false" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="false"
             data-r-x-small-dots="true" data-r-x-medium="2" data-r-x-medium-nav="false" data-r-x-medium-dots="true" data-r-small="2" data-r-small-nav="false" data-r-small-dots="true" data-r-medium="2" data-r-medium-nav="false" data-r-medium-dots="true"
             data-r-large="2" data-r-large-nav="false" data-r-large-dots="true">
+            @foreach($data['testinomial'] as $testinomial)
             <div class="single-item">
                 <div class="single-item-wrapper">
                     <div class="profile-img-wrapper">
-                        <a href="#" class="profile-img"><img class="profile-img-responsive img-circle" src="img/students/1.jpg" alt="Testimonial"></a>
+                        <a href="#" class="profile-img"><img class="profile-img-responsive img-circle" 
+                        src="http://localhost/school_college_admin/uploads/testinomials/{{$testinomial->featured_image}}" alt="Testimonial"></a>
                     </div>
                     <div class="tlp-tm-content-wrapper">
-                        <h3 class="item-title"><a href="#">Rosy Janner</a></h3>
+                        <h3 class="item-title"><a href="#">{{$testinomial->name}}</a></h3>
                         <span class="item-designation">UI Designer</span>
                         <ul class="rating-wrapper">
                             <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -189,105 +168,13 @@
                             <li><i class="fa fa-star" aria-hidden="true"></i></li>
                             <li><i class="fa fa-star" aria-hidden="true"></i></li>
                         </ul>
-                        <div class="item-content">Pellentesque tellus arcu, laoreet volutpavenenatis molestPellentesque commodo lorem lectus pretium vehicula.</div>
+                        <div class="item-content">
+                            {!!$testinomial->description!!}
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="single-item">
-                <div class="single-item-wrapper">
-                    <div class="profile-img-wrapper">
-                        <a href="#" class="profile-img"><img class="profile-img-responsive img-circle" src="img/students/2.jpg" alt="Testimonial"></a>
-                    </div>
-                    <div class="tlp-tm-content-wrapper">
-                        <h3 class="item-title"><a href="#">Dainel Dina</a></h3>
-                        <span class="item-designation">Manager</span>
-                        <ul class="rating-wrapper">
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        </ul>
-                        <div class="item-content">Pellentesque tellus arcu, laoreet volutpavenenatis molestPellentesque commodo lorem lectus pretium vehicula.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-item">
-                <div class="single-item-wrapper">
-                    <div class="profile-img-wrapper">
-                        <a href="#" class="profile-img"><img class="profile-img-responsive img-circle" src="img/students/1.jpg" alt="Testimonial"></a>
-                    </div>
-                    <div class="tlp-tm-content-wrapper">
-                        <h3 class="item-title"><a href="#">Rosy Janner</a></h3>
-                        <span class="item-designation">UI Designer</span>
-                        <ul class="rating-wrapper">
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        </ul>
-                        <div class="item-content">Pellentesque tellus arcu, laoreet volutpavenenatis molestPellentesque commodo lorem lectus pretium vehicula.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-item">
-                <div class="single-item-wrapper">
-                    <div class="profile-img-wrapper">
-                        <a href="#" class="profile-img"><img class="profile-img-responsive img-circle" src="img/students/2.jpg" alt="Testimonial"></a>
-                    </div>
-                    <div class="tlp-tm-content-wrapper">
-                        <h3 class="item-title"><a href="#">Dainel Dina</a></h3>
-                        <span class="item-designation">Manager</span>
-                        <ul class="rating-wrapper">
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        </ul>
-                        <div class="item-content">Pellentesque tellus arcu, laoreet volutpavenenatis molestPellentesque commodo lorem lectus pretium vehicula.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-item">
-                <div class="single-item-wrapper">
-                    <div class="profile-img-wrapper">
-                        <a href="#" class="profile-img"><img class="profile-img-responsive img-circle" src="img/students/1.jpg" alt="Testimonial"></a>
-                    </div>
-                    <div class="tlp-tm-content-wrapper">
-                        <h3 class="item-title"><a href="#">Rosy Janner</a></h3>
-                        <span class="item-designation">UI Designer</span>
-                        <ul class="rating-wrapper">
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        </ul>
-                        <div class="item-content">Pellentesque tellus arcu, laoreet volutpavenenatis molestPellentesque commodo lorem lectus pretium vehicula.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-item">
-                <div class="single-item-wrapper">
-                    <div class="profile-img-wrapper">
-                        <a href="#" class="profile-img"><img class="profile-img-responsive img-circle" src="img/students/2.jpg" alt="Testimonial"></a>
-                    </div>
-                    <div class="tlp-tm-content-wrapper">
-                        <h3 class="item-title"><a href="#">Dainel Dina</a></h3>
-                        <span class="item-designation">Manager</span>
-                        <ul class="rating-wrapper">
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        </ul>
-                        <div class="item-content">Pellentesque tellus arcu, laoreet volutpavenenatis molestPellentesque commodo lorem lectus pretium vehicula.</div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
@@ -296,11 +183,11 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 counter1-box wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".20s">
-                <h2 class="about-counter title-bar-counter" data-num="80">80</h2>
+                <h2 class="about-counter title-bar-counter" data-num="{{count($data['lecturer'])}}">{{count($data['lecturer'])}}</h2>
                 <p>PROFESSIONAL TEACHER</p>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 counter1-box wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".40s">
-                <h2 class="about-counter title-bar-counter" data-num="20">20</h2>
+                <h2 class="about-counter title-bar-counter" data-num="{{$data['total_courses']}}">{{$data['total_courses']}}</h2>
                 <p>NEWS COURSES EVERY YEARS</p>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 counter1-box wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".60s">
